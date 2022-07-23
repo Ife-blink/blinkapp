@@ -24,11 +24,15 @@ export const LoginScreen = ({ navigation }) => {
     <>
       <View isSafe style={styles.container}>
         <KeyboardAwareScrollView enableOnAndroid={true}>
-          {/* LogoContainer: consits app logo and screen title */}
-          <View style={styles.logoContainer}>
-            <Logo uri={Images.logo} />
-            <Text style={styles.screenTitle}>Welcome back!</Text>
-          </View>
+          
+          
+          <View style={{flex: 2, marginVertical: 60,}}>
+    <Text style={styles.h1text}>Sign up</Text>
+    <Text style={styles.paragraph}>Young people use blink for a seamlesss reading experience</Text>
+    </View>
+        
+         
+          <View style={{flex: 2,}}>
           <Formik
             initialValues={{
               email: '',
@@ -86,7 +90,10 @@ export const LoginScreen = ({ navigation }) => {
                   <FormErrorMessage error={errorState} visible={true} />
                 ) : null}
                 {/* Login button */}
-                <Button style={styles.button} onPress={handleSubmit}>
+                <Button style={[styles.button, {backgroundColor: Colors.green, padding: 12,
+                marginTop: 20,
+              }]}
+                 onPress={handleSubmit}>
                   <Text style={styles.buttonText}>Login</Text>
                 </Button>
               </>
@@ -105,15 +112,12 @@ export const LoginScreen = ({ navigation }) => {
             title={'Forgot Password'}
             onPress={() => navigation.navigate('ForgotPassword')}
           />
+
+        </View>
         </KeyboardAwareScrollView>
       </View>
-
-      {/* App info footer */}
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>
-          Expo Firebase Starter App (based on managed workflow)
-        </Text>
-      </View>
+     
+      
     </>
   );
 };
@@ -121,8 +125,9 @@ export const LoginScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
-    paddingHorizontal: 12
+    backgroundColor: Colors.deepgreen,
+    padding: 20,
+  
   },
   logoContainer: {
     alignItems: 'center'
@@ -133,17 +138,6 @@ const styles = StyleSheet.create({
     color: Colors.black,
     paddingTop: 20
   },
-  footer: {
-    backgroundColor: Colors.white,
-    paddingHorizontal: 12,
-    paddingBottom: 48,
-    alignItems: 'center'
-  },
-  footerText: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: Colors.orange
-  },
   button: {
     width: '100%',
     justifyContent: 'center',
@@ -151,16 +145,30 @@ const styles = StyleSheet.create({
     marginTop: 8,
     backgroundColor: Colors.orange,
     padding: 10,
-    borderRadius: 8
+    borderRadius: 5
   },
   buttonText: {
     fontSize: 20,
-    color: Colors.white,
+    color: Colors.deepgreen,
     fontWeight: '700'
   },
   borderlessButtonContainer: {
     marginTop: 16,
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+    
+  },
+  h1text: {
+    color: "white",
+    //fontFamily: 'DMSans-Black',
+    fontSize: 28,
+  },
+  paragraph: {
+    color: "#FFFFFF60",
+    //fontFamily: 'DMSans-Regu',
+    fontWeight: "normal",
+    fontSize: 16,
+    marginTop: 3,
+   
+  },
 });

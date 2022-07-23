@@ -5,12 +5,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // add firebase config
 const firebaseConfig = {
-  apiKey: Constants.manifest.extra.apiKey,
-  authDomain: Constants.manifest.extra.authDomain,
-  projectId: Constants.manifest.extra.projectId,
-  storageBucket: Constants.manifest.extra.storageBucket,
-  messagingSenderId: Constants.manifest.extra.messagingSenderId,
-  appId: Constants.manifest.extra.appId,
+  apiKey: "AIzaSyBF5rOgLt6jZ_mYA7QegdemPiDDWW81htc",
+  authDomain: "blink-733cb.firebaseapp.com",
+  projectId: "blink-733cb",
+  storageBucket: "blink-733cb.appspot.com",
+  messagingSenderId: "1085065303623",
+  appId: "1:1085065303623:web:d2094d3adeddb8f9d98362",
+  measurementId: "G-BY2BQKLX65"
 };
 
 // initialize firebase

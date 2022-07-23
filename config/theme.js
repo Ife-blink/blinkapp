@@ -3,6 +3,9 @@ export const Colors = {
   blue: '#039be5',
   black: '#222222',
   white: '#ffffff',
+  deepgreen: '#05192D',
+  input: "#35373650",
+  green: "#03F363",
   mediumGray: '#6e6869',
   red: '#fc5c65'
 };

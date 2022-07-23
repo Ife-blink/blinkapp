@@ -2,8 +2,8 @@ import 'dotenv/config';
 
 export default {
   expo: {
-    name: 'Expo Firebase Starter',
-    slug: 'expo-firebase',
+    name: 'blink',
+    slug: 'blink',
     privacy: 'public',
     platforms: ['ios', 'android'],
     version: '0.15.0',
