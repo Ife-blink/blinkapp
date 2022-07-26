@@ -1,6 +1,6 @@
-import HomePage from './screens/HomePage';
-import Explore from './screens/Explore';
-import Profile from './screens/profile';
+import HomePageNav from '../navigation/HomePageNav';
+import Explore from './Explore';
+import Profile from './profile';
 
 import { View, Text, StyleSheet, SafeAreaView, } from 'react-native'
 import React, { Component } from 'react';
@@ -12,25 +12,11 @@ import { AntDesign, Ionicons, MaterialIcons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
 
 
-const For_you =()=>{
-  return(
-    <View style={{flex: 1,}}><Profile /></View>
-  )
-}
 
-const Home =()=>{
-  return(
-    <View style={{flex: 1,}}><HomePage /></View>
-  )
-}
+export default function HomeScreen () {
 
-const ExplorePage =()=>{
-  return(
-    <View style={{flex: 1,}}><Explore /></View>
-  )
-}
 
-export default function HomeScreen() {
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={{flex: 1,}}>
@@ -46,14 +32,14 @@ export default function HomeScreen() {
       }}
       
       >
-      <Tab.Screen name="Home" component={Home}
+      <Tab.Screen name="Home" component={HomePageNav}
       //For the Icons
       options={{
         tabBarIcon: ({ color, size }) => (
           <AntDesign name="home" color={color} size={size} />)
       }}
       />
-      <Tab.Screen name="Explore" component={ExplorePage}
+      <Tab.Screen name="Explore" component={Explore}
       options={{
         tabBarIcon: ({ color, size }) => (
           //<AntDesign name="search1" color={color} size={size} />)
@@ -61,7 +47,7 @@ export default function HomeScreen() {
           ,
       }}
       />
-      <Tab.Screen name="For-you" component={For_you}
+      <Tab.Screen name="For-you" component={Profile}
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="person-circle-outline" size={size} color="white" />)
@@ -74,6 +60,9 @@ export default function HomeScreen() {
     </View>
   );
 }
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

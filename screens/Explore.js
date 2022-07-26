@@ -49,17 +49,6 @@ const Explore = () => {
         )
     }
    
-/*{!fakeData ? (
-        <ActivityIndicator size="large" />
-      ) : (
-        
-          <List
-            searchPhrase={searchPhrase}
-            data={fakeData}
-            setClicked={setClicked}
-          /> 
-        
-          )} */
     
 
   return (

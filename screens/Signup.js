@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Pressable} from 'react-native'
 import React,{useState} from 'react'
-import SignupName from './screens/SignupName'
-import SignupPassword from './screens/SignupPassword'
-import SignupEmail from './screens/SignupEmail'
+import SignupName from './SignupName'
+import SignupPassword from './SignupPassword'
+import SignupEmail from './SignupEmail'
 
 const Signup = () => {
   //Steps
@@ -32,16 +32,16 @@ const Signup = () => {
   }
 
   //Handle form value state on change
-  const handleChanges = (mytextname) => {
-    return (val) => {
-        setState({ ...data, [mytextname]: val })
-    }
-}
+  const handleChange = (values) => {
+    setMultiFormValues({ email: values.email, firstName: values.firstName,
+    lastName: values.lastName, password: values.password,
+    })
+  }
 
   return (
     <View>
       {activeStep === 0 && (
-        <SignupEmail values={multiFormValues} handleChange={handleChange} />
+        <SignupEmail values={multiFormValues} handleChange={handleChange} onPress={handleNext}/>
       )}
       {activeStep === 1 && (
         <SignupName values={multiFormValues} handleChange={handleChange} />

@@ -11,7 +11,7 @@ import {
 const Item = ({ name, details }) => (
   <View style={styles.item}>
     <Text style={styles.title}>{name}</Text>
-    <Text style={{color: 'white'}}>{details}</Text>
+    <Text style={styles.details}>{details}</Text>
   </View>
 );
 

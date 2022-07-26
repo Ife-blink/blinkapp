@@ -3,9 +3,13 @@ import SearchBar from '../components/SearchBar';
 import { AntDesign } from '@expo/vector-icons'; 
 import React, {Component, useState, useEffect} from 'react'
 import { useFonts } from 'expo-font';
-import { View } from 'react-native-web';
+import { View, Text, StyleSheet, SafeAreaView, StatusBar } from 'react-native';
+import { Colors } from '../config';
 
-export default function Search () {
+
+
+export default function SearchScreen() {
+
     const [searchPhrase, setSearchPhrase] = useState("");
     const [clicked, setClicked] = useState(false);
     const [fakeData, setFakeData] = useState();
@@ -40,7 +44,8 @@ export default function Search () {
       }
 
 return(
-    <View style={{flex: 1,}}>
+  <SafeAreaView style={{flex: 1, paddingTop: StatusBar.currentHeight, backgroundColor: Colors.deepgreen}}>
+    <View style={{flex: 1, backgroundColor: Colors.deepgreen }}>
         {!clicked && <Header />}
    <View style={{flex: 1, position: 'relative', zIndex: 100,}}>
       <SearchBar
@@ -52,5 +57,11 @@ return(
       {clicked && <Recent />}
       </View>
       </View>
+      </SafeAreaView>
     );
 }
+
+const styles = StyleSheet.create({
+
+
+})
